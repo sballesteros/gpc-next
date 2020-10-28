@@ -7,6 +7,7 @@
   align-items: center;
 }
 
+
 .main {
   padding: 5rem 0;
   flex: 1;
@@ -23,17 +24,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  & img {
+    margin-left: 0.5rem;
+  }
+  & a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color);
+
+    @media (--narrow-window) {
+      color: green !important;
+    }
+  }
 }
 
-.footer img {
-  margin-left: 0.5rem;
-}
-
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .title a {
   color: #0070f3;

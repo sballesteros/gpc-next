@@ -4,12 +4,99 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start"
   },
+  "eslintConfig": {
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+      "sourceType": "module"
+    },
+    "env": {
+      "browser": true,
+      "es6": true,
+      "node": true
+    },
+    "plugins": [
+      "react",
+      "import",
+      "react-hooks"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:import/errors",
+      "plugin:import/warnings"
+    ],
+    "rules": {
+      "no-console": [
+        "warn",
+        {
+          "allow": [
+            "error",
+            "warn",
+            "trace"
+          ]
+        }
+      ],
+      "no-unused-vars": [
+        "error",
+        {
+          "args": "none",
+          "ignoreRestSiblings": true
+        }
+      ],
+      "no-empty": [
+        "error",
+        {
+          "allowEmptyCatch": true
+        }
+      ],
+      "no-constant-condition": [
+        "error",
+        {
+          "checkLoops": false
+        }
+      ],
+      "no-bitwise": [
+        "error",
+        {
+          "allow": [
+            "~"
+          ]
+        }
+      ],
+      "no-cond-assign": [
+        "error",
+        "except-parens"
+      ],
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
+      "react/react-in-jsx-scope": "off"
+    }
+  },
   "dependencies": {
+    "bootstrap": "^4.5.3",
+    "gray-matter": "^4.0.2",
     "next": "10.0.0",
+    "postcss-flexbugs-fixes": "^4.2.1",
+    "postcss-preset-env": "^6.7.0",
+    "postcss-url": "^10.0.0",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "remark": "^13.0.0",
+    "remark-html": "^13.0.1",
+    "sass": "^1.27.1"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.12.1",
+    "babel-eslint": "^10.1.0",
+    "classnames": "^2.2.6",
+    "eslint": "^7.12.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.1.2",
+    "prop-types": "^15.7.2"
   }
 }

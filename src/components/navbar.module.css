@@ -1,0 +1,7 @@
+.mobileMenu {
+  transition: all 300ms ease-out;
+  max-height: 0;
+  &.open {
+    max-height: 300px;
+  }
+}
