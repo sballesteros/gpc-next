@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import styles from './layout.module.css';
 import Navbar from './navbar';
 import StatusBar from './status-bar';
@@ -5,6 +6,11 @@ import StatusBar from './status-bar';
 export default function Layout({ children, header = true }) {
   return (
     <div>
+      <Head>
+        <title>Create Next App</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
       {/* <!-- GPC STATUS --> */}
       <aside className="status status--light py-1 px-3 px-sm-4">
         <StatusBar />

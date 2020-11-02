@@ -1,20 +1,33 @@
 import path from 'path';
+import PropTypes from 'prop-types';
 import { parseMarkdown } from '../utils/markdown';
 import Layout from '../components/layout';
 import Article from '../components/article';
 import PressList from '../components/press-list';
+import FeaturedArticles from '../components/featured-articles';
+import styles from './press.module.css';
 
-export default function Press({ data: { title, entries } = {} }) {
+export default function PressPage({ data: { title, entries } = {} }) {
   return (
     <Layout>
       <Article title={title}>
-        <div className="col-10">
+        <section className={`${styles.featured} col-10`}>
+          <header>
+            <h2>Featured Articles</h2>
+          </header>
+          <FeaturedArticles entries={entries} />
+        </section>
+        <section className="col-10">
           <PressList entries={entries} />
-        </div>
+        </section>
       </Article>
     </Layout>
   );
 }
+
+PressPage.propTypes = {
+  data: PropTypes.object
+};
 
 export async function getStaticProps(context) {
   const props = await parseMarkdown(

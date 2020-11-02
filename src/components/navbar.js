@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import styles from './navbar.module.css';
+import VisuallyHidden from './visually-hidden';
 
 export default function Navbar({ isLarge = false }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,20 +9,25 @@ export default function Navbar({ isLarge = false }) {
   return (
     <nav className="navbar navbar-expand-md">
       <div className="navbar__logos">
-        <img
-          className="d-lg-none"
-          src={`${process.env.publicPrefix}/img/gpc-logo-mobile.svg`}
-          alt="global privacy control logo"
-          id="hero-logo"
-        />
-        <img
-          className="d-none d-lg-block"
-          src={`${process.env.publicPrefix}/img/${
-            isLarge ? 'gpc-logo.svg' : 'gpc-logo-small.svg'
-          }`}
-          alt="global privacy control logo"
-          id="hero-logo"
-        />
+        <Link href="/">
+          <a>
+            <VisuallyHidden>Home</VisuallyHidden>
+            <img
+              className="d-lg-none"
+              src={`${process.env.publicPrefix}/img/gpc-logo-mobile.svg`}
+              alt="global privacy control logo"
+              id="hero-logo"
+            />
+            <img
+              className="d-none d-lg-block"
+              src={`${process.env.publicPrefix}/img/${
+                isLarge ? 'gpc-logo.svg' : 'gpc-logo-small.svg'
+              }`}
+              alt="global privacy control logo"
+              id="hero-logo"
+            />
+          </a>
+        </Link>
       </div>
 
       {/* <!-- MOBILE NAV TOGGLE --> */}

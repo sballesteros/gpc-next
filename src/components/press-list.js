@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import styles from './press-list.module.css';
 
 export default function PressList({ entries }) {
@@ -17,3 +18,7 @@ export default function PressList({ entries }) {
     </ul>
   );
 }
+
+PressList.propTypes = {
+  entries: PropTypes.array.isRequired
+};

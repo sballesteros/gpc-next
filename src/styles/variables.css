@@ -3,8 +3,13 @@
   --px-in-rem: 0.0625rem; /* 1/16 */
 
   --bg-dark: #0a3e2d;
+  --text-light: #999999;
   --text-dark: #49504e;
   --text-bright-green: #25bf87;
+
+  --focus-outline: rgba(0, 123, 255, 0.25);
+  --primary-bg: #058a5e;
+  --primary-bg-hover: rgba(5, 138, 94, 0.7);
 }
 
 
