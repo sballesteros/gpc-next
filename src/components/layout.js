@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 import styles from './layout.module.css';
 import Navbar from './navbar';
@@ -10,6 +11,8 @@ export default function Layout({
   children,
   header = true
 }) {
+  const router = useRouter();
+
   return (
     <div>
       <Head>
@@ -17,24 +20,39 @@ export default function Layout({
         <title>{title}</title>
         <meta name="title" content={title} />
         <meta name="description" content={description} />
-        <link rel="canonical" href="https://globalprivacycontrol.org" />
+        <link
+          rel="canonical"
+          href={`https://globalprivacycontrol.org${router.pathname}`}
+        />
 
         {/* <!-- OPEN GRAPH / FACEBOOK --> */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://globalprivacycontrol.org/" />
+        <meta
+          property="og:url"
+          content={`https://globalprivacycontrol.org${router.pathname}`}
+        />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
-        <meta property="og:image" content="/static/img/gpc-social-big.jpg" />
+        <meta
+          property="og:image"
+          content={`${process.env.publicPrefix}/img/gpc-social-big.jpg`}
+        />
 
         {/* <!-- TWITTER --> */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://globalprivacycontrol.org/" />
+        <meta
+          name="twitter:url"
+          content={`https://globalprivacycontrol.org${router.pathname}`}
+        />
         <meta
           name="twitter:title"
           content="Global Privacy Control — Take Control Of Your Privacy"
         />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content="/static/img/gpc-social-big.jpg" />
+        <meta
+          name="twitter:image"
+          content={`${process.env.publicPrefix}/img/gpc-social-big.jpg`}
+        />
         <meta name="twitter:site" content="@globalprivcntrl" />
         <meta name="twitter:creator" content="@globalprivcntrl" />
       </Head>
@@ -93,7 +111,7 @@ export default function Layout({
                 and is subject to its{' '}
                 <a href="https://docs.github.com/en/free-pro-team@latest/github/site-policy/github-privacy-statement">
                   Privacy Policy
-                </a>
+                </a>{' '}
                 and{' '}
                 <a href="https://docs.github.com/en/free-pro-team@latest/github/site-policy/github-terms-of-service">
                   Terms of Service

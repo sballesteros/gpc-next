@@ -85,9 +85,11 @@ export default function Home({ pressData, faqData }) {
               </span>
 
               <p className="mb-0 py-3 text-center">
-                <a href="/press-release/20201007.html">
-                  <u>Read the Global Privacy Control press release.</u>
-                </a>
+                <Link href="/press-release/20201007">
+                  <a>
+                    <u>Read the Global Privacy Control press release.</u>
+                  </a>
+                </Link>
               </p>
             </div>
           </div>

@@ -42,7 +42,6 @@
     border-radius: 3px;
     overflow: hidden;
     text-decoration: none;
-    background-color: var(--primary-bg);
     text-align: center;
     min-height: 100%;
     display: flex;
@@ -53,6 +52,7 @@
 
     /* image */
     & > span:first-child {
+      background-color: var(--primary-bg);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -72,7 +72,6 @@
 
     /* title + source */
     & > span:last-child {
-      flex-grow: 1;
       background-color: white;
       padding: 20px;
       display: flex;
