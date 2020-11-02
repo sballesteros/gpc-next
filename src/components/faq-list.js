@@ -44,12 +44,12 @@ function FaqSection({
   return (
     <section className="mt-2" id={id}>
       <header
-        className={classNames(styles.header, 'px-4', {
+        className={classNames(styles.header, {
           [styles.dark]: isDark
         })}
       >
         <a
-          className={isOpened ? styles.active : undefined}
+          className={classNames('px-4', { [styles.active]: isOpened })}
           href={`#${id}`}
           onClick={e => {
             e.preventDefault();

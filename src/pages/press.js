@@ -9,7 +9,7 @@ import styles from './press.module.css';
 
 export default function PressPage({ data: { title, entries } = {} }) {
   return (
-    <Layout>
+    <Layout title="Press & Announcements | Global Privacy Control">
       <Article title={title}>
         <section className={`${styles.featured} col-10`}>
           <header>

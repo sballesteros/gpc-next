@@ -1,14 +1,42 @@
+import PropTypes from 'prop-types';
 import Head from 'next/head';
 import styles from './layout.module.css';
 import Navbar from './navbar';
 import StatusBar from './status-bar';
 
-export default function Layout({ children, header = true }) {
+export default function Layout({
+  title = 'Global Privacy Control — Take Control Of Your Privacy',
+  description = 'Exercise your privacy rights in one step via the “Global Privacy Control” (GPC) signal, a proposed specification backed by over a dozen organizations.',
+  children,
+  header = true
+}) {
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        {/* <!-- PRIMARY META TAGS --> */}
+        <title>{title}</title>
+        <meta name="title" content={title} />
+        <meta name="description" content={description} />
+        <link rel="canonical" href="https://globalprivacycontrol.org" />
+
+        {/* <!-- OPEN GRAPH / FACEBOOK --> */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://globalprivacycontrol.org/" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content="/static/img/gpc-social-big.jpg" />
+
+        {/* <!-- TWITTER --> */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://globalprivacycontrol.org/" />
+        <meta
+          name="twitter:title"
+          content="Global Privacy Control — Take Control Of Your Privacy"
+        />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content="/static/img/gpc-social-big.jpg" />
+        <meta name="twitter:site" content="@globalprivcntrl" />
+        <meta name="twitter:creator" content="@globalprivcntrl" />
       </Head>
 
       {/* <!-- GPC STATUS --> */}
@@ -84,3 +112,10 @@ export default function Layout({ children, header = true }) {
     </div>
   );
 }
+
+Layout.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  children: PropTypes.any,
+  header: PropTypes.bool
+};

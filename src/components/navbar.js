@@ -59,7 +59,7 @@ export default function Navbar({ isLarge = false }) {
 
       {/* <!-- DESKTOP NAV LINKS --> */}
       <div className="d-none d-md-block ml-auto text-nowrap">
-        <Links sep={true} />
+        <Links />
       </div>
 
       {/* <!-- MOBILE NAV LINKS --> */}
@@ -77,7 +77,7 @@ export default function Navbar({ isLarge = false }) {
   );
 }
 
-function Links({ sep = false }) {
+function Links() {
   return (
     <ul className="navbar-nav">
       <li className="nav-item">
@@ -91,6 +91,11 @@ function Links({ sep = false }) {
         </Link>
       </li>
       <li className="nav-item">
+        <Link href="/#gpc-spec">
+          <a className="nav-link text-uppercase">Spec</a>
+        </Link>
+      </li>
+      <li className="nav-item">
         <Link href="/#download">
           <a className="nav-link text-uppercase">Download</a>
         </Link>
@@ -100,24 +105,14 @@ function Links({ sep = false }) {
           <a className="nav-link text-uppercase">Get Involved</a>
         </Link>
       </li>
-      {sep && (
-        <li className="nav-item">
-          <a className="nav-link" href="#">
-            |
-          </a>
-        </li>
-      )}
-
       <li className="nav-item">
-        <Link href="/press">
+        <Link href="/#press">
           <a className="nav-link text-uppercase">Press</a>
         </Link>
       </li>
       <li className="nav-item">
-        <Link href="/faq">
-          <a className="nav-link text-uppercase" href="faq">
-            FAQ
-          </a>
+        <Link href="/#faq">
+          <a className="nav-link text-uppercase">FAQ</a>
         </Link>
       </li>
     </ul>

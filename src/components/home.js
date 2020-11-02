@@ -514,7 +514,7 @@ export default function Home({ pressData, faqData }) {
         </div>
       </section>
 
-      <section className="section">
+      <section id="press" className="section">
         <div className="container">
           <h2 className="section__title text-center">
             Featured Press & Announcements
@@ -536,7 +536,7 @@ export default function Home({ pressData, faqData }) {
         </div>
       </section>
 
-      <section className="section section--dark">
+      <section id="faq" className="section section--dark">
         <div className="container">
           <h2 className="section__title text-center">{faqData.data.title}</h2>
 

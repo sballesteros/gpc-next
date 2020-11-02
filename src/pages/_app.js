@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import Head from 'next/head';
 import '../styles/globals.css';
 import '../styles/legacy.scss';
@@ -30,10 +31,20 @@ function MyApp({ Component, pageProps }) {
           sizes="16x16"
           href={`${process.env.publicPrefix}/img/favicon/favicon-16x16.png`}
         />
+
+        <link
+          rel="manifest"
+          href={`${process.env.publicPrefix}/site.webmanifest`}
+        />
       </Head>
       <Component {...pageProps} />
     </>
   );
 }
+
+MyApp.propTypes = {
+  Component: PropTypes.any,
+  pageProps: PropTypes.object
+};
 
 export default MyApp;

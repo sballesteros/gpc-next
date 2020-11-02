@@ -20,8 +20,10 @@
     padding-top: 18px;
     padding-bottom: 18px;
     display: flex;
+    align-items: center;
     color: var(--text-dark);
     & svg {
+      min-width: 1rem;
       margin-left: auto;
       transition: transform 0.3s ease-out;
     }

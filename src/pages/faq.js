@@ -7,7 +7,7 @@ import FaqList from '../components/faq-list';
 
 export default function FaqPage({ data, html, sections }) {
   return (
-    <Layout>
+    <Layout title="Frequently Asked Questions | Global Privacy Control">
       <Article title="Frequently Asked Questions">
         <div className="col-11 col-lg-8">
           <FaqList sections={sections} />
