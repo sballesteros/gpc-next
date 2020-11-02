@@ -15,7 +15,10 @@ export default function FeaturedArticles({ entries }) {
         <li key={contentUrl}>
           <a href={contentUrl}>
             <span>
-              <img src={`${process.env.publicPrefix}${img}`} />
+              <img
+                src={`${process.env.publicPrefix}${img}`}
+                alt={`logo for ${source}`}
+              />
             </span>
             <span>
               <span>{title}</span>

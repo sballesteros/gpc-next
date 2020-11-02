@@ -5,6 +5,7 @@ import Button from './button';
 import FaqList from './faq-list';
 import styles from './home.module.css';
 import FeaturedArticles from './featured-articles';
+import VisuallyHidden from './visually-hidden';
 
 export default function Home({ pressData, faqData }) {
   return (
@@ -419,7 +420,7 @@ export default function Home({ pressData, faqData }) {
                       className="stretched-link"
                       href="https://www.abine.com/blog/2020/online-privacy-leaders-launch-gpc-global-privacy-control-standard/"
                     >
-                      LEARN MORE
+                      LEARN MORE <VisuallyHidden>about Abine</VisuallyHidden>
                     </a>
                   </div>
                 </li>
@@ -436,7 +437,10 @@ export default function Home({ pressData, faqData }) {
                       className="stretched-link"
                       href="https://brave.com/global-privacy-content/"
                     >
-                      LEARN MORE
+                      LEARN MORE{' '}
+                      <VisuallyHidden>
+                        about Brave Privacy Browser
+                      </VisuallyHidden>
                     </a>
                   </div>
                 </li>
@@ -450,7 +454,8 @@ export default function Home({ pressData, faqData }) {
                   <div className="table__desc">Disconnect</div>
                   <div className="table__link">
                     <a className="stretched-link" href="https://disconnect.me/">
-                      LEARN MORE
+                      LEARN MORE{' '}
+                      <VisuallyHidden>about Disconnect</VisuallyHidden>
                     </a>
                   </div>
                 </li>
@@ -467,7 +472,10 @@ export default function Home({ pressData, faqData }) {
                       className="stretched-link"
                       href="https://spreadprivacy.com/announcing-global-privacy-control/"
                     >
-                      LEARN MORE
+                      LEARN MORE{' '}
+                      <VisuallyHidden>
+                        about DuckDuckGo Privacy Browser
+                      </VisuallyHidden>
                     </a>
                   </div>
                 </li>
@@ -487,7 +495,10 @@ export default function Home({ pressData, faqData }) {
                       className="stretched-link"
                       href="https://privacytechlab.org/optmeowt"
                     >
-                      LEARN MORE
+                      LEARN MORE{' '}
+                      <VisuallyHidden>
+                        about OptMeowt by privacy-tech-lab
+                      </VisuallyHidden>
                     </a>
                   </div>
                 </li>
@@ -504,7 +515,8 @@ export default function Home({ pressData, faqData }) {
                       className="stretched-link"
                       href="https://privacybadger.org"
                     >
-                      LEARN MORE
+                      LEARN MORE{' '}
+                      <VisuallyHidden>Privacy Badger by EFF</VisuallyHidden>
                     </a>
                   </div>
                 </li>
