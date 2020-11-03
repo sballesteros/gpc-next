@@ -32,5 +32,14 @@ export default function FeaturedArticles({ entries }) {
 }
 
 FeaturedArticles.propTypes = {
-  entries: PropTypes.array.isRequired
+  entries: PropTypes.arrayOf(
+    PropTypes.shape({
+      datePublished: PropTypes.string.isRequired,
+      contentUrl: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      source: PropTypes.string.isRequired,
+      isFeaturedIndex: PropTypes.number,
+      img: PropTypes.string
+    })
+  ).isRequired
 };

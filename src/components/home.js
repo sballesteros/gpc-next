@@ -528,8 +528,8 @@ export default function Home({ pressData, faqData }) {
         </div>
       </section>
 
-      <section id="press" className="section">
-        <div className="container">
+      <section className="section">
+        <div id="press" className="container">
           <h2 className="section__title text-center">
             Featured Press & Announcements
           </h2>
@@ -550,14 +550,14 @@ export default function Home({ pressData, faqData }) {
         </div>
       </section>
 
-      <section id="faq" className="section section--dark">
-        <div className="container">
+      <section className="section section--dark">
+        <div id="faq" className="container">
           <h2 className="section__title text-center">{faqData.data.title}</h2>
 
           <div className="row justify-content-center mt-5">
             <div className="col-11 col-lg-8">
               <FaqList
-                hx="h2"
+                hx="h3"
                 sections={faqData.sections}
                 isDark={true}
                 nRendered={6}
@@ -579,6 +579,34 @@ export default function Home({ pressData, faqData }) {
 }
 
 Home.propTypes = {
-  pressData: PropTypes.object,
-  faqData: PropTypes.object
+  pressData: PropTypes.shape({
+    data: PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      entries: PropTypes.arrayOf(
+        PropTypes.shape({
+          datePublished: PropTypes.string.isRequired,
+          contentUrl: PropTypes.string.isRequired,
+          title: PropTypes.string.isRequired,
+          source: PropTypes.string.isRequired,
+          isFeaturedIndex: PropTypes.number,
+          img: PropTypes.string
+        })
+      ).isRequired
+    }).isRequired
+  }).isRequired,
+  faqData: PropTypes.shape({
+    data: PropTypes.shape({
+      title: PropTypes.string.isRequired
+    }),
+    html: PropTypes.string,
+    sections: PropTypes.arrayOf(
+      PropTypes.shape({
+        key: PropTypes.string.isRequired,
+        data: PropTypes.shape({
+          title: PropTypes.string.isRequired
+        }),
+        html: PropTypes.string.isRequired
+      })
+    ).isRequired
+  }).isRequired
 };

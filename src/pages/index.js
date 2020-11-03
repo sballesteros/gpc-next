@@ -13,8 +13,36 @@ export default function HomePage({ pressData, faqData }) {
 }
 
 HomePage.propTypes = {
-  pressData: PropTypes.object,
-  faqData: PropTypes.object
+  pressData: PropTypes.shape({
+    data: PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      entries: PropTypes.arrayOf(
+        PropTypes.shape({
+          datePublished: PropTypes.string.isRequired,
+          contentUrl: PropTypes.string.isRequired,
+          title: PropTypes.string.isRequired,
+          source: PropTypes.string.isRequired,
+          isFeaturedIndex: PropTypes.number,
+          img: PropTypes.string
+        })
+      ).isRequired
+    }).isRequired
+  }).isRequired,
+  faqData: PropTypes.shape({
+    data: PropTypes.shape({
+      title: PropTypes.string.isRequired
+    }),
+    html: PropTypes.string,
+    sections: PropTypes.arrayOf(
+      PropTypes.shape({
+        key: PropTypes.string.isRequired,
+        data: PropTypes.shape({
+          title: PropTypes.string.isRequired
+        }),
+        html: PropTypes.string.isRequired
+      })
+    ).isRequired
+  }).isRequired
 };
 
 export async function getStaticProps(context) {

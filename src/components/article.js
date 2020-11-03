@@ -1,8 +1,9 @@
+import PropTypes from 'prop-types';
 import styles from './article.module.css';
 
-export default function Article({ title, children }) {
+export default function Article({ title, children, ...others }) {
   return (
-    <article className={styles.articleWrapper}>
+    <article className={styles.articleWrapper} {...others}>
       <div className="container">
         <div className={styles.article}>
           <div className="row justify-content-center">
@@ -19,3 +20,8 @@ export default function Article({ title, children }) {
     </article>
   );
 }
+
+Article.propTypes = {
+  title: PropTypes.string.isRequired,
+  children: PropTypes.any
+};

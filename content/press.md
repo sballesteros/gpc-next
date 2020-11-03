@@ -40,7 +40,7 @@ entries:
     isFeaturedIndex: 2
     img: "/img/press-logos/wired-white.svg"
   - datePublished: Oct 7th, 2020
-    contentUrl: https://globalprivacycontrol.org/press-release/20201007.html
+    contentUrl: https://globalprivacycontrol.org/press-release/20201007
     title: "Announcing Global Privacy Control: Making it Easy for Consumers to Exercise Their Privacy Rights"
     source: Global Privacy Control
     isFeaturedIndex: 1

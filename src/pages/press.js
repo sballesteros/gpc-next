@@ -26,7 +26,19 @@ export default function PressPage({ data: { title, entries } = {} }) {
 }
 
 PressPage.propTypes = {
-  data: PropTypes.object
+  data: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    entries: PropTypes.arrayOf(
+      PropTypes.shape({
+        datePublished: PropTypes.string.isRequired,
+        contentUrl: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        source: PropTypes.string.isRequired,
+        isFeaturedIndex: PropTypes.number,
+        img: PropTypes.string
+      })
+    ).isRequired
+  }).isRequired
 };
 
 export async function getStaticProps(context) {

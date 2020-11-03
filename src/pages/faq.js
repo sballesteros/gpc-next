@@ -10,7 +10,7 @@ export default function FaqPage({ data, html, sections }) {
     <Layout title="Frequently Asked Questions | Global Privacy Control">
       <Article title="Frequently Asked Questions">
         <div className="col-11 col-lg-8">
-          <FaqList sections={sections} />
+          <FaqList sections={sections} rdfa={true} />
         </div>
       </Article>
     </Layout>
@@ -18,9 +18,19 @@ export default function FaqPage({ data, html, sections }) {
 }
 
 FaqPage.propTypes = {
-  data: PropTypes.object,
+  data: PropTypes.shape({
+    title: PropTypes.string.isRequired
+  }),
   html: PropTypes.string,
-  sections: PropTypes.array
+  sections: PropTypes.arrayOf(
+    PropTypes.shape({
+      key: PropTypes.string.isRequired,
+      data: PropTypes.shape({
+        title: PropTypes.string.isRequired
+      }),
+      html: PropTypes.string.isRequired
+    })
+  ).isRequired
 };
 
 export async function getStaticProps(context) {

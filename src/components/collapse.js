@@ -2,7 +2,12 @@ import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './collapse.module.css';
 
-export default function Collapse({ isOpened, children, keepChildren = true }) {
+export default function Collapse({
+  isOpened,
+  children,
+  keepChildren = true,
+  ...others
+}) {
   const ref = useRef(null);
   const [height, setHeight] = useState(isOpened ? 'auto' : '0px');
   const [isClosing, setIsClosing] = useState(false);
@@ -89,7 +94,7 @@ export default function Collapse({ isOpened, children, keepChildren = true }) {
   }, [isOpened, isClosing]);
 
   return (
-    <div className={styles.collapse} ref={ref} style={{ height }}>
+    <div className={styles.collapse} ref={ref} style={{ height }} {...others}>
       {keepChildren ||
       isOpened ||
       isClosing ||
