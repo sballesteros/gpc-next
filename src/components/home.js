@@ -555,7 +555,7 @@ export default function Home({ pressData, faqData }) {
           <h2 className="section__title text-center">{faqData.data.title}</h2>
 
           <div className="row justify-content-center mt-5">
-            <div className="col-11 col-lg-8">
+            <div className="col-12 col-lg-8">
               <FaqList
                 hx="h3"
                 sections={faqData.sections}
