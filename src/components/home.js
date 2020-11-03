@@ -13,7 +13,7 @@ export default function Home({ pressData, faqData }) {
       {/* <!-- HERO SECTION --> */}
       <section className="hero-background">
         <header className="container">
-          <Navbar />
+          <Navbar isLarge={true} />
         </header>
 
         <div className="hero">

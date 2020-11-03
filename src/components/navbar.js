@@ -7,7 +7,7 @@ export default function Navbar({ isLarge = false }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="navbar navbar-expand-md">
+    <nav className={`${styles.navbar} navbar navbar-expand-md`}>
       <div className="navbar__logos">
         <Link href="/">
           <a>
@@ -79,7 +79,7 @@ export default function Navbar({ isLarge = false }) {
 
 function Links() {
   return (
-    <ul className="navbar-nav">
+    <ul className={`navbar-nav ${styles.linkList}`}>
       <li className="nav-item">
         <Link href="/#about">
           <a className="nav-link text-uppercase">About</a>

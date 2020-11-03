@@ -89,36 +89,6 @@
 }
 
 
-
-/*=======================================================================================*/
-/* NAVIGATION BAR */
-nav {
-  &.navbar {
-    padding: calculateRem(40px) 0 0;
-  }
-
-  a.nav-link {
-    @include fontSize(12px);
-    font-weight: 900;
-    line-height: calculateRem(28px);
-    color: white;
-
-    &:hover {
-      color: white;
-      text-decoration: underline;
-    }
-  }
-
-  &--dark {
-    background-color: $bg--dark;
-  }
-
-  .navbar--mobile {
-    // used to animate show/hide
-    max-height: 300px;
-  }
-}
-
 /*=======================================================================================*/
 /* HERO SECTION */
 

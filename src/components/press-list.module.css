@@ -58,6 +58,13 @@
   flex: 1 1 0px;
   font-size: cacl(16 * var(--px-in-rem));
   line-height: calc(28 * var(--px-in-rem));
+
+  &,
+  & > * {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 .date {

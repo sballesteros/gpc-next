@@ -7,6 +7,7 @@ module.exports = {
   env: {
     publicPrefix: isProd ? GH_PAGES_PREFIX : ''
   },
+  crossOrigin: 'anonymous',
   basePath: isProd ? GH_PAGES_PREFIX : '',
   assetPrefix: isProd ? GH_PAGES_PREFIX : '',
   sassOptions: {

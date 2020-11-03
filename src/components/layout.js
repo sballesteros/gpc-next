@@ -58,7 +58,7 @@ export default function Layout({
       </Head>
 
       {/* <!-- GPC STATUS --> */}
-      <aside className="status status--light py-1 px-3 px-sm-4">
+      <aside>
         <StatusBar />
       </aside>
 
@@ -66,7 +66,7 @@ export default function Layout({
         <header className={styles.header}>
           <div className="container">
             <div className="row no-gutters justify-content-center">
-              <div className={`col-10 ${styles.navWrapper}`}>
+              <div className={`col-12 ${styles.navWrapper}`}>
                 <Navbar />
               </div>
             </div>
@@ -79,19 +79,19 @@ export default function Layout({
       {/* <!-- CONTACT SECTION --> */}
       <section
         id="contact"
-        className="contact section section--green text-center"
+        className={`${styles.contact} section section--green text-center`}
       >
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-6">
-              <h1 className="contact__title">Get Involved</h1>
+              <h1>Get Involved</h1>
 
-              <p className="contact__text">
+              <p>
                 Contact us to learn more about becoming a Participating
                 Organization and supporting GPC on your browser, app or website.
               </p>
               <a
-                className="d-block contact__link"
+                className="d-block"
                 href="mailto:info@globalprivacycontrol.org"
               >
                 info@globalprivacycontrol.org
@@ -102,7 +102,7 @@ export default function Layout({
       </section>
 
       {/* <!-- FOOTER --> */}
-      <footer className="footer">
+      <footer className={styles.footer}>
         <div className="container">
           <div className="row text-center">
             <div className="col">
